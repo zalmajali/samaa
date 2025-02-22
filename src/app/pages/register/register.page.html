@@ -1,0 +1,119 @@
+<ion-content>
+  <div class="main-content">
+      <div class="upper_div">
+        <div class="logo_img" [ngStyle]="{'background-image': 'url(assets/img/logo.png)'}"></div>
+      </div>
+    <div class="center_div">
+      <div class="head_text">
+        <ion-label class="{{title_border}}">{{register_title}}</ion-label>
+      </div>
+      <form style="display: contents;" (ngSubmit)="registration()">
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorFullName}}">
+          <ion-icon class="icon" name="person-circle-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="fullName" [ngModelOptions]="{standalone: true}" placeholder="{{register_full_name}}" (ionInput)="checkFullName($event)"></ion-input>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorFullName == 0">{{register_full_name_field}}</div>
+      </div>
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorMobile}}">
+          <ion-icon class="icon" name="call-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="mobile" [ngModelOptions]="{standalone: true}" placeholder="{{register_full_mobile}}" (ionInput)="checkMobile($event)"></ion-input>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorMobile == 0">{{register_full_mobile_field}}</div>
+      </div>
+      <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorBuilding}}">
+            <ion-icon class="icon" name="business-outline"></ion-icon>
+              <ion-select  toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"  (ionChange)="checkBuilding($event)"  label="{{register_full_building}}" placeholder="{{register_select}}" mode="ios" interface="popover" class="my-custom-interface">
+                <ion-select-option value="-1">{{register_select}}</ion-select-option>
+                <ion-select-option *ngFor="let items of returnApartmentArray;let i=index" value="{{i}}">{{items.building_name}}</ion-select-option>
+              </ion-select>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorBuilding == 0">{{register_full_building_field}}</div>
+      </div>
+      <div>
+       <div [ngStyle]="{'direction': dir}" class="input {{errorApartment}}">
+          <ion-icon class="icon" name="storefront-outline"></ion-icon>
+            <ion-select toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"   (ionChange)="checkApartment($event)"  label="{{register_full_apartment}}" placeholder="{{register_select}}" mode="ios" interface="popover" class="my-custom-interface">
+              <ion-select-option value="0">{{register_select}}</ion-select-option>
+              <ion-select-option *ngFor="let items of selectedApartmentArray;let i=index" value="{{items.apartment_id}}">{{items.apartment_number}}</ion-select-option>
+            </ion-select>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorApartment == 0">{{register_full_apartment_field}}</div>
+      </div>
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorEmailUser}}">
+          <ion-icon class="icon" name="mail-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="emailUser" [ngModelOptions]="{standalone: true}" placeholder="{{register_email_field}}" (ionInput)="checkEmailUser($event)"></ion-input>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorEmailUser == 0">{{error_message_email_user_name}}</div>
+      </div>
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorUserPassword}}">
+          <ion-icon class="icon" name="lock-closed-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="userPassword" [ngModelOptions]="{standalone: true}" placeholder="{{register_password_field}}" (ionInput)="checkPassword($event)"></ion-input>
+          <img src="assets/img/6195699.png" style="width: 25px;" (click)="generatePassword()">
+        </div>
+        <div class="passwordNote">
+          <div>{{new_password_note_one}}</div>
+          <div>{{new_password_note_tow}}</div>
+          <div>{{new_password_note_three}}</div>
+          <div>{{new_password_note_for}}</div>
+          <div>{{new_password_note_five}}</div>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorUserPassword == 0">{{register_enter_password_field}}</div>
+        <div style="margin: 0px 10px;" *ngIf="passwordStrengthValue!=0">
+          <div class="progress-bar-container">
+            <div class="progress-bar" [ngStyle]="{'background-color': passwordStrengthClass, 'width': passwordStrengthValuePersent}"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorByDate}}">
+          <ion-icon class="icon" name="time-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="byDate" [ngModelOptions]="{standalone: true}" placeholder="{{register_Date_by_field}}" (ionInput)="checkDate($event)"></ion-input>
+          <ion-icon class="icon" name="calendar" (click)="openCalender2()"></ion-icon>
+        </div>
+        <div class="errorMessage" *ngIf="isErrorByDate == 0">{{register_Date_by_}}</div>
+      </div>
+
+      <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorFile}}">
+          <ion-icon class="icon" name="document-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="fileName" [ngModelOptions]="{standalone: true}" placeholder="{{register_deed_field}}"></ion-input>
+          <ion-icon class="iconUploade" name="cloud-upload" (click)="selectFile()"></ion-icon>
+        </div>
+        <div class="notFile">{{register_file_field}}</div>
+        <div class="errorMessage" *ngIf="isErrorFile == 0">{{register_file_error}}</div>
+      </div>
+      <ion-button (click)="registration()" shape="round" expand="block" class="submit-btn">{{register_button}}</ion-button>
+      <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+    </form>
+    </div>
+    <div class="lower_div">
+      <div class="line">
+        <div class="border"></div>
+        <ion-label class="ion-label">{{add_account_or}}</ion-label>
+      </div>
+      <div class="login-btn">
+        <ion-buttons>
+          <ion-button><ion-icon name="logo-apple"></ion-icon></ion-button>
+        </ion-buttons>
+        <ion-buttons>
+          <ion-button> <ion-icon name="logo-facebook"></ion-icon> </ion-button>
+        </ion-buttons>
+        <ion-buttons>
+          <ion-button><ion-icon name="logo-google"></ion-icon> </ion-button>
+        </ion-buttons>
+      </div>
+      <div class="lower_btn">
+        <ion-label>{{register_have_account}}</ion-label>
+        <ion-button expand="block" fill="clear" shape="round" (click)="goToLogin()">
+          {{login_button}}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

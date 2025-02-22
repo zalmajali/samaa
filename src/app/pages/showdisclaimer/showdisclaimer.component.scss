@@ -1,0 +1,14 @@
+ion-toolbar {
+    --ion-toolbar-background-color: transparent;
+    --ion-toolbar-text-color: white;
+  }
+.ion-title{
+    padding-inline-start:0px !important;
+}
+.description {
+    padding: 0px 20px;
+}
+.text {
+    font-size: 12px;
+    color: var(--ion-color-medium);
+}

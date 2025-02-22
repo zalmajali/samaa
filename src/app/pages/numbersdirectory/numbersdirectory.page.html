@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_111}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+   <div *ngFor="let items of returnContactsDataArray; let j=index">
+    <div class="nameData">
+      {{items[0]}}
+    </div>
+    <div class="list_card" *ngFor="let itemsD of items[1]; let j=index">
+      <div class="img" [style.backgroundImage]="'url(assets/img/profile.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{itemsD.name}}</ion-label>
+          <ion-label  style="margin-top: 10px;">
+            <ion-icon *ngIf="itemsD.location" name="location" class="iconCall" (click)="openDirections(itemsD.location)"></ion-icon>
+            <ion-icon name="call" class="iconCall" (click)="callNumberUser(itemsD.phone)"></ion-icon>
+          </ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text">{{itemsD.phone}}</ion-label>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_23}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="slide_div">
+    <div class="slide_img" [style.backgroundImage]="'url(assets/img/3.png)'"></div>
+  </div>
+  <div class="container">
+    <div class="name_div">
+      <div class="top_div">
+        <ion-label class="heading_title">{{service_name}}</ion-label>
+        <ion-label class="textData">{{service_type}}</ion-label>
+      </div>
+      <div class="detail_div">
+        <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">{{service_schedule_time}}</ion-label>
+        <ion-icon name="alarm" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">{{service_schedule_date}}</ion-label>
+        <ion-icon name="alert-circle" color="primary" class="ionIconInformation" ></ion-icon>
+        <ion-label class="text" [ngStyle]="{'color': service_status_color}" >{{service_status}}</ion-label>
+      </div>
+      <div class="detail_div">
+        <ion-label class="price">{{service_price}}JD</ion-label>
+        <ion-label class="text">&nbsp;</ion-label>
+      </div>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_22}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{service_description}}</ion-label>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_184}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{service_approved_description}}</ion-label>
+    </div>
+    <div *ngIf="notes">
+      <div class="title_div">
+        <ion-label class="title">{{app_label_54}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="text">{{notes}}</ion-label>
+      </div>
+    </div>
+    <div *ngIf="owner_approve == 1 && approve_text">
+      <div class="title_div">
+        <ion-label class="title">{{app_label_55}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="text">{{approve_text}}</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

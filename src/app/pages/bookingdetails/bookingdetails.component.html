@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_107}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="slide_div">
+    <div class="slide_img" [style.backgroundImage]="'url(assets/img/banner.png)'"></div>
+  </div>
+  <div class="container">
+    <div class="name_div">
+      <div class="top_div">
+        <ion-label class="heading_title">{{utility_name}}</ion-label>
+        <ion-label class="textData" [ngStyle]="{'color': booking_status_color}">{{booking_status}}</ion-label>
+      </div>
+      <div class="detail_div">
+        <div class="divInfo">
+          <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text">{{booking_date_start}}</ion-label>
+        </div>
+        <div class="divInfo" (click)="callNumberUser(mobileUser)">
+          <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">{{booking_date_end}}</ion-label>
+        </div>
+      </div>
+      <div class="detail_div">
+        <ion-label class="price">{{booking_price}}JD</ion-label>
+        <ion-label class="text">&nbsp;</ion-label>
+      </div>
+    </div>
+    <div class="detail_div">
+      <div class="divInfo">
+        <ion-icon name="person" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text" style="font-weight: bold;">{{owner_name}}</ion-label>
+      </div>
+      <div class="divInfo" (click)="callNumberUser(mobileUser)">
+        <ion-icon name="call" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text" style="color: rgb(88, 88, 255);text-decoration: underline;">{{mobileUser}}</ion-label>
+      </div>
+    </div>
+    <div class="detail_div">
+      <div class="divInfo">
+        <ion-icon name="business" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">{{building}}</ion-label>
+      </div>
+      <div class="divInfo">
+        <ion-icon name="storefront" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">{{apartment_number}}</ion-label>
+      </div>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_22}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{booking_note}}</ion-label>
+    </div>
+    <div *ngIf="approved_description">
+      <div class="title_div">
+        <ion-label class="title">{{app_label_54}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="text">{{approved_description}}</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

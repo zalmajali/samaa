@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{request_title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refrechPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-content">
+    <div *ngIf="newUser==1">
+      <div class="order_card" *ngFor="let item of returnNewUserArray;let i=index">
+        <div class="{{card_style_Color}}"></div>
+        <div class="detail">
+          <div class="item">
+            <ion-label class="head pb-1">{{item.name}}</ion-label>
+          </div>
+          <div class="item">
+            <ion-label class="title">{{app_label_1}}</ion-label>
+            <ion-label class="text">{{item.mobile}} <ion-icon class="iconCallEmail" name="call" (click)="callNumberUser(item.mobile)"></ion-icon></ion-label>
+          </div>
+          <div class="item">
+            <ion-label class="title">{{app_label_2}}</ion-label>
+            <ion-label class="textData">{{item.email}}<ion-icon class="iconCallEmail" name="mail"  (click)="sendEmailUser(item.email)"></ion-icon></ion-label>
+          </div>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-col">
+                  <div class="titleMen"><ion-icon name="storefront-outline" class="iconLabel"></ion-icon> {{app_label_3}}</div>
+                  <div class="subtitleMen">{{item.apartment_number}}</div>
+                </ion-col>
+                <ion-col class="ion-col">
+                  <div class="titleMen"><ion-icon name="business-outline" class="iconLabel"></ion-icon> {{app_label_4}}</div>
+                  <div class="subtitleMen">{{item.building_name}}</div>
+                </ion-col>
+                <ion-col class="ion-col">
+                  <div class="titleMen"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon> {{app_label_5}}</div>
+                  <div class="subtitleMen">{{item.ownership_date}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="item">
+            <ion-label class="title">
+             <span *ngIf="item.ownership_documentation" (click)="openFileUser(item.ownership_documentation)"> {{app_label_6}} <ion-icon class="icon" name="cloud-download"></ion-icon></span>
+            </ion-label>
+            <ion-label class="textData"  style="color:#5c7784"><span class="approve" (click)="changeStatus(item.ownership_id,1)">{{app_label_7}}</span> | <span class="reject" (click)="changeStatus(item.ownership_id,2)">{{app_label_8}}</span></ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="newUser==0">
+      <div class="divIconNoOrders">
+         <img src="../../assets/img/logo.png" class="imageIcon">
+     </div>
+     <div class="errorNoDataLarge">{{app_label_9}}</div>
+     <div class="errorNoDataSmall">{{app_label_10}}</div>
+  </div>
+  </div>
+</ion-content>

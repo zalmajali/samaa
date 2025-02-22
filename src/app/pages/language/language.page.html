@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_178}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <ion-label class="text">{{app_label_179}}</ion-label>
+    <ion-list>
+      <ion-radio-group class="md" [value]="selectLang">
+        <ion-item lines="none" class="payment" (click)="setLang('en')">
+          <ion-label>English</ion-label>
+          <ion-radio slot="end" value="en"></ion-radio>
+        </ion-item>
+        <ion-item lines="none" class="payment" (click)="setLang('ar')">
+          <ion-label>عربي</ion-label>
+          <ion-radio slot="end" value="ar"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+    <ion-button class="btn" shape="round" (click)="applyLang()" expand="block">
+      {{app_label_69}}
+    </ion-button>
+  </div>
+</ion-footer>

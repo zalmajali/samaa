@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_82}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="main-content">
+    <swiper-container class="utilitySlider" #swiper  [loop]="true" [pagination]="true">
+      <swiper-slide *ngFor="let item of returnImagesForeArray">
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url('+item+')'}"></div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+    <div class="container">
+      <div class="name_div">
+        <div class="top_div">
+          <ion-label class="heading_title">{{utility_name}}</ion-label>
+        </div>
+        <div class="detail_div">
+          <ion-label class="price">{{utility_price}}JD</ion-label>
+          <ion-label class="text">&nbsp;</ion-label>
+        </div>
+      </div>
+      <div class="title_div" *ngIf="is_image==1">
+        <ion-label class="title">Gallery Photos</ion-label>
+      </div>
+      <div class="gallary_div" *ngIf="is_image==1">
+        <div *ngFor="let item of returnImagesArray">
+          <div class="img" [style.backgroundImage]="'url('+item+')'" (click)="showImage(item)">
+          </div>
+        </div>
+      </div>
+      <div class="title_div">
+        <ion-label class="title">{{app_label_22}}</ion-label>
+      </div>
+      <div class="description">
+        <ion-label class="text">{{utility_details}}</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer">
+    <ion-button class="btn" shape="round" expand="block" (click)="goToAddUtility(utility_id,utility_type)">
+      {{app_label_83}}
+    </ion-button>
+  </div>
+</ion-footer>

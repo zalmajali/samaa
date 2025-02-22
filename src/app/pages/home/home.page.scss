@@ -1,0 +1,149 @@
+.notificationsIcon{
+    color: var(--ion-color-primary);
+    padding: 0px 5px;
+    font-size: 23px;
+}
+.userName{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #5c7784;
+}
+.banner_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    margin: 0px 16px;
+    border: 1px solid var(--ion-color-light);
+    border-radius: 15px;
+    position: relative;
+    background-color: var(--ion-color-primary);
+    box-shadow: 0px 0px 15px var(--box-shadow-color);
+    --box-shadow-color: #f3f3f4;
+}
+.content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+.discount {
+    width: max-content;
+    font-size: 20px;
+    font-family: "bold";
+    color: white;
+}
+.title {
+    width: max-content;
+    font-size: 18px;
+    font-family: "bold";
+    color: white;
+    padding: 10px 0px;
+}
+.text {
+    text-align: start;
+    font-size: 12px;
+    color: var(--ion-color-light);
+}
+.imgOffer {
+    width: 30%;
+    height: 100%;
+}
+.title_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 16px 3px 16px;
+}
+.titleServe {
+    font-size: 16px;
+    font-family: 'bold';
+}
+.btn {
+    font-size: 14px;
+    color: var(--ion-color-primary);
+    font-family: 'bold';
+}
+ion-row {
+    margin: 5px 0px;
+}
+ion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ion-img {
+    width: 90%;
+    padding: 3px;
+    border-radius: 50%;
+}
+.ionLabelserv {
+    font-size: 12px;
+    font-family: "medium";
+    padding-top: 6px;
+    text-align: center;
+}
+.grid_card{
+    padding: 0px 1px !important;
+}
+.grid_card {
+    padding: 16px 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col_div {
+    width: 50%;
+}
+.hotel_card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 12px;
+    position: relative;
+    margin: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.imgFacility{
+    height: 120px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+}
+.detail {
+    padding-top: 6px;
+}
+.titleFacility{
+    font-size: 13px;
+    font-family: 'bold';
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.price_div {
+    display: flex;
+    align-items: flex-end;
+}
+.price {
+    font-size: 14px;
+    font-family: 'bold';
+    color: var(--ion-color-primary);
+}
+.errorNoDataSmall{
+	text-align: center;
+    color: grey;
+    font-size: 10px;
+	margin-top: 1vh;
+}
+.divIconNoOrders{
+	text-align: center;
+    margin-top: 5vh;
+}
+.imageIcon{
+	width:10%
+}

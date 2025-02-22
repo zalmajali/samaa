@@ -1,0 +1,70 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title>{{account_title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <div class="profile">
+      <div class="profile-item">
+        <div class="profile-picture">
+          <div class="img" [style.backgroundImage]="'url(assets/img/profile.png)'">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item_div" (click)="goToEditProfile()">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>{{account_information}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="item_div" (click)="goToChangePassword()">
+      <ion-icon name="lock-open-outline"></ion-icon>
+      <ion-label>{{account_change_password}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="item_div" (click)="goToNotification()">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>{{account_notification}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div class="item_div" (click)="goToLanguage()">
+      <ion-icon name="language-outline"></ion-icon>
+      <ion-label>{{account_language}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div *ngIf="user_type==1" class="item_div" (click)="goToDues()">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>{{account_dues}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div *ngIf="user_type==1" class="item_div" (click)="goToWarranty()">
+      <ion-icon name="folder-outline"></ion-icon>
+      <ion-label>{{account_warranty}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div *ngIf="user_type==1" class="item_div" (click)="goToContact()">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <ion-label>{{account_contact}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+    <div *ngFor="let item of returnPagesArray;let i=index">
+      <div class="item_div" (click)="goToPages(item.page_id,item.page_name)">
+        <ion-icon name="pricetag-outline"></ion-icon>
+        <ion-label>{{item.page_name}}</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="item_div" (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>{{account_logout}}</ion-label>
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </div>
+  </div>
+</ion-content>

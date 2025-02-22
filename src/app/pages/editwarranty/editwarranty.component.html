@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_136}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+      <form style="display: contents;" (ngSubmit)="warrantyEdit()">
+        
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorWarrantyStartDate}}">
+            <ion-icon class="icon" name="time-outline"></ion-icon>
+            <ion-input [value]="guarantee_start_date" type="text" [(ngModel)]="warrantyStartDate" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_131}}"></ion-input>
+            <ion-icon class="icon" name="calendar" (click)="openCalender()"></ion-icon>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorWarrantyStartDate == 0">{{app_label_138}}</div>
+        </div>
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorWarrantyEndDate}}">
+            <ion-icon class="icon" name="time-outline"></ion-icon>
+            <ion-input [value]="guarantee_end_date" type="text" [(ngModel)]="warrantyEndDate" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_132}}"></ion-input>
+            <ion-icon class="icon" name="calendar" (click)="openCalender2()"></ion-icon>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorWarrantyEndDate == 0">{{app_label_139}}</div>
+        </div>
+        <div>
+            <div [ngStyle]="{'direction': dir}" class="input {{errorWarrantyNote}}">
+              <ion-icon class="iconText" name="information-circle-outline"></ion-icon>
+              <ion-textarea [value]="guarantee_details" placeholder="{{app_label_137}}" [ngModelOptions]="{standalone: true}" (ionInput)="checkNote($event)" mode='ios' rows='4' [(ngModel)]="warrantyNote"></ion-textarea>
+            </div>
+            <div class="errorMessage" *ngIf="isErrorWarrantyNote == 0">{{app_label_142}}</div>
+        </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+      <ion-button (click)="warrantyEdit()" shape="round" expand="block" class="submit-btn">{{app_label_143}}</ion-button>
+  </div>
+</ion-footer>

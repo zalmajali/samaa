@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{app_label_175}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refrechPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-content">
+    <div *ngIf="notfication==1">
+      <div class="card" *ngFor="let item of returnNotficationArray">
+        <div class="icon-div">
+          <div class="icon">
+            <div class="cate_img" [style.backgroundImage]="'url(assets/img/push.png)'"></div>
+          </div>
+          <div class="details">
+            <div class="title">{{item.title}}</div>
+            <div class="contText">{{item.body}}</div>
+            <div class="text">{{item.date}}</div>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div *ngIf="notfication==0">
+        <div class="divIconNoOrders">
+          <img src="../../assets/img/logo.png" class="imageIcon">
+      </div>
+      <div class="errorNoDataLarge">{{app_label_9}}</div>
+      <div class="errorNoDataSmall">{{app_label_10}}</div>
+    </div>
+  </div>
+  <ion-infinite-scroll slot="fixed" position="bottom" threshold="10px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content loadingSpinner="none">
+    </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

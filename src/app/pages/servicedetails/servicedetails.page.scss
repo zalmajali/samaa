@@ -1,0 +1,76 @@
+ion-toolbar {
+    --ion-toolbar-background-color: transparent;
+    --ion-toolbar-text-color: white;
+  }
+.ion-title{
+    padding-inline-start:0px !important;
+}
+.slide_div {
+    width: 100%;
+    height: 34vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.slide_img {
+    position: absolute;
+    top: 0px;
+    height: 34vh;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+.name_div {
+    padding: 16px 16px 5px 16px;
+}
+.top_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading_title {
+    font-family: 'bold';
+    font-size: 20px;
+}
+//add for dete
+.detail_div {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+.ionIconInformation {
+    padding: 0px 5px;
+}
+//for date
+.text {
+    font-size: 12px;
+    color: var(--ion-color-medium);
+}
+.price {
+    font-size: 20px;
+    font-family: 'bold';
+    color: var(--ion-color-primary);
+}
+.title_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 16px;
+}
+.title {
+    font-size: 16px;
+    font-family: 'bold';
+}
+.description {
+    padding: 0px 20px;
+}
+.btn {
+    font-size: 14px;
+    color: #ffffff;
+}

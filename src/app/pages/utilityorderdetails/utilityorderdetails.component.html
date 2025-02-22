@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_88}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="slide_div">
+    <div class="slide_img" [style.backgroundImage]="'url(assets/img/banner.png)'"></div>
+  </div>
+  <div class="container">
+    <div class="name_div">
+      <div class="top_div">
+        <ion-label class="heading_title">{{utility_name}}</ion-label>
+      </div>
+      <div class="detail_div">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-col">
+              <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+              <ion-label class="text">{{booking_date_start}}</ion-label>
+            </ion-col>
+            <ion-col class="ion-col">
+              <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+              <ion-label class="text">{{booking_date_end}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="detail_div">
+        <ion-label class="price">{{booking_price}}JD</ion-label>
+        <ion-label class="text">&nbsp;</ion-label>
+      </div>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_22}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{booking_note}}</ion-label>
+    </div>
+  </div>
+</ion-content>

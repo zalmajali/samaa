@@ -1,0 +1,29 @@
+.center_div {
+    width: 100%;
+    padding: 0px 16px;
+}
+.input {
+    background-color: var(--ion-color-light);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 13px 0px 5px 0px;
+}
+.icon {
+    color: var(--ion-color-primary);
+    padding: 0px 10px;
+    width: 1.5em;
+    height: 1.3em;
+}
+.closeIcon {
+    color: var(--ion-color-primary);
+    width: 1.5em;
+    height: 1.3em;
+}
+ion-input {
+    padding-left: 10px;
+}
+.ion-title{
+    padding-inline-start:0px !important;
+}

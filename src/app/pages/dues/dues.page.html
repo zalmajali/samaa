@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToSearch()">
+        <ion-icon name="search-outline" class="searchIcon"></ion-icon>
+      </ion-button>
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{app_label_144}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (ionScroll)="onScroll($event)" scrollEvents="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refrechPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-content">
+    <div *ngIf="dataDues==1">
+      <div class="order_card" *ngFor="let item of returnDuesArray;let i=index">
+        <div class="highlightEn" [ngStyle]="{'background-color': item.dues_status_color}"></div>
+        <div class="detail">
+          <div class="item">
+            <ion-label class="head pb-1">{{item.type_name}}</ion-label>
+            <ion-label class="head pb-1" (click)="goToDuesdetails(item.due_id)">
+              <ion-icon name="reader" class="iconCallEmail"></ion-icon>
+            </ion-label>
+          </div>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-col">
+                  <div class="titleMen"> <ion-icon name="bookmark-outline" class="iconLabel"></ion-icon>{{app_label_147}}</div>
+                  <div class="subtitleMen">#{{item.due_id}}</div>
+                </ion-col>
+                <ion-col class="ion-col">
+                  <div class="titleMen"> <ion-icon name="cash-outline" class="iconLabel"></ion-icon>{{app_label_34}}</div>
+                  <div class="subtitleMen">{{item.price}} JD</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-col">
+                  <ion-label class="title"><ion-icon name="calendar-outline" class="iconTime"></ion-icon> {{item.dues_date}}</ion-label>
+                </ion-col>
+              <ion-col class="ion-col">
+                <ion-label class="title"><ion-icon name="time-outline" class="iconTime"></ion-icon> {{item.dues_time}}</ion-label>
+              </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="item">
+            <ion-label class="textData" [ngStyle]="{'color': item.dues_status_color}">{{item.dues_status}}</ion-label>
+            <ion-label class="head pb-1">
+              <ion-icon name="cash" [ngStyle]="{'color': item.dues_status_color}" class="iconCallEmail" (click)="goToDuesPay(item.due_id)" *ngIf="item.status==0"></ion-icon>
+            </ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dataDues==0">
+      <div class="divIconNoOrders">
+         <img src="../../assets/img/logo.png" class="imageIcon">
+     </div>
+     <div class="errorNoDataLarge">{{app_label_9}}</div>
+     <div class="errorNoDataSmall">{{app_label_10}}</div>
+  </div>
+  </div>
+  <ion-infinite-scroll slot="fixed" position="bottom" threshold="10px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content loadingSpinner="none">
+    </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

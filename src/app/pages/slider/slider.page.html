@@ -1,0 +1,49 @@
+<ion-content>
+  <div class="main-content">
+    <swiper-container #swiper  [loop]="true" [pagination]="true">
+      <swiper-slide>
+        <div class="header">
+          <img src="assets/img/backGroundLogo.png" style="width: 135px;">
+        </div>
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url(https://app.samaabdountowers.com/img/admin/slider/02.png)'}"></div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="header">
+          <img src="assets/img/backGroundLogo.png" style="width: 135px;">
+        </div>
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url(https://app.samaabdountowers.com/img/admin/slider/03.png)'}"></div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="header">
+          <img src="assets/img/backGroundLogo.png" style="width: 135px;">
+        </div>
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url(https://app.samaabdountowers.com/img/admin/slider/04.png)'}"></div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="header">
+          <img src="assets/img/backGroundLogo.png" style="width: 135px;">
+        </div>
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url(https://app.samaabdountowers.com/img/admin/slider/05.png)'}"></div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="header">
+          <img src="assets/img/backGroundLogo.png" style="width: 135px;">
+        </div>
+        <div class="slide_div">
+          <div class="slide_img" [ngStyle]="{'background-image': 'url(https://app.samaabdountowers.com/img/admin/slider/06.png)'}"></div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <div class="footer">
+    <ion-button expand="block" shape="round" (click)="goToLogin()"> Get Started </ion-button>
+  </div>
+</ion-content>

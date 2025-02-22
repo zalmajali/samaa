@@ -1,0 +1,28 @@
+ion-toolbar {
+    --ion-toolbar-background-color: transparent;
+    --ion-toolbar-text-color: white;
+  }
+.ion-title{
+    padding-inline-start:0px !important;
+}
+.main-content {
+    padding: 16px 0px;
+}
+.text {
+    padding: 16px;
+    font-family: 12px;
+    font-family: 'regular';
+}
+.payment {
+    border-radius: 15px;
+    margin: 16px 16px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+ion-label {
+    padding: 16px 0px;
+    font-family: 'medium';
+    font-size: 16px;
+}
+  .add_btn {
+    margin: 24px;
+  } 

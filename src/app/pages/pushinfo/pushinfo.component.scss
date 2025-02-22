@@ -1,0 +1,49 @@
+ion-content{
+	--background: #0000003d;
+    background: #0000003d;
+    background-size: cover;
+	background-position:center;
+}
+.largBox{
+	width: 100%;
+    text-align: -webkit-center;
+}
+.smallBox{
+	margin-top:100px; 
+	text-align:center;  
+	border-radius:5px;
+	box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-webkit-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67); 
+	-moz-box-shadow: 0px 2px 42px 0px rgba(0,0,0,0.67);
+    width: 80%;
+    height: 100%;
+    background: #ffffff;
+}
+.iconPus{
+    font-size: 27px;
+    color: #ffffff;
+    padding: 13px;
+    background:#5c7784;
+    border-radius: 100px;
+    border: 2px solid #ffffff;
+}
+.divPush{
+    position: relative;
+    top: -27px;
+    height: 40px;
+}
+.titlePush{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.bodyPush{
+    font-size: 15px;
+    padding: 5px 10px;
+    line-height: 25px;
+}
+.buttom{
+    padding: 15px 10px 31px 10px;
+    width: 70%;
+    margin: 0px auto;
+}

@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_3}} #{{apartment_number}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="main-content">
+    <div class="name_div">
+      <div class="detail" *ngIf="owner_name">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="person-circle-outline" class="iconLabel"></ion-icon>{{app_label_133}}</ion-label>
+          <ion-label class="head">{{owner_name}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="mobile_aprt">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="call-outline" class="iconLabel"></ion-icon>{{app_label_134}}</ion-label>
+          <ion-label class="head" (click)="callNumberUser(mobile_aprt)">{{mobile_aprt}} <ion-icon name="call" class="iconLabel"></ion-icon></ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="email_aprt">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="mail-outline" class="iconLabel"></ion-icon>{{app_label_135}}</ion-label>
+          <ion-label class="head">{{email_aprt}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="building_name">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="business-outline" class="iconLabel"></ion-icon>{{app_label_126}}</ion-label>
+          <ion-label class="head">{{building_name}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="building_type">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="business-outline" class="iconLabel"></ion-icon>{{app_label_127}}</ion-label>
+          <ion-label class="head">{{building_type}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="building_address">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="location-outline" class="iconLabel"></ion-icon>{{app_label_128}}</ion-label>
+          <ion-label class="head">{{building_address}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="apartment_floor">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="bookmarks-outline" class="iconLabel"></ion-icon>{{app_label_124}}</ion-label>
+          <ion-label class="head">{{apartment_floor}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="apartment_type">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="storefront-outline" class="iconLabel"></ion-icon>{{app_label_125}}</ion-label>
+          <ion-label class="head">{{apartment_type}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="ownership_date">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_130}}</ion-label>
+          <ion-label class="head">{{ownership_date}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="ownership_documentation">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="folder-outline" class="iconLabel"></ion-icon>{{app_label_129}}</ion-label>
+          <ion-label class="head" (click)="openFileUser(ownership_documentation)"><img src="assets/img/PDFFile.png" style="width: 40px;"></ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="guarantee_start_date">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_131}}</ion-label>
+          <ion-label class="head">{{guarantee_start_date}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="guarantee_end_date">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_132}}</ion-label>
+          <ion-label class="head">{{guarantee_end_date}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="guarantee_end_date">
+        <div>
+          <ion-label class="head"><ion-icon name="reader-outline" class="iconLabel"></ion-icon>{{app_label_137}}</ion-label>
+          <div class="headDeta">{{guarantee_details}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="guarantee_start_date">
+  <div class="footer">
+    <ion-button class="btn" shape="round" expand="block" (click)="goToEditWarranty(apartment_id_selects,guarantee_start_date,guarantee_end_date,guarantee_details)">
+      {{app_label_136}}
+    </ion-button>
+  </div>
+</ion-footer>

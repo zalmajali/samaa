@@ -1,0 +1,50 @@
+ion-toolbar {
+    --ion-toolbar-background-color: transparent;
+    --ion-toolbar-text-color: white;
+}
+.ion-title{
+    padding-inline-start:0px !important;
+}
+.list_card {
+    display: flex;
+    padding: 10px 16px;
+}
+.img {
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 16px;
+}
+.details {
+    display: block;
+    width: 90%;
+}
+.flex_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.title {
+    font-family: 'medium';
+    padding: 0px 0px;
+    font-size: 14px;
+}
+.text {
+    font-size: 12px;
+    color: var(--ion-color-medium);
+}
+.nameData{
+    color: #000000;
+    padding:25px 25px 0px 25px ;
+    font-size: 17px; 
+    font-weight: bold;
+}
+.iconCall{
+    font-size: 23px;    
+    color: var(--ion-color-primary);
+}

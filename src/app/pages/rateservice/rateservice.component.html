@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_56}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+        <div>
+        <div [ngStyle]="{'direction': dir}" class="input {{errorRateNoteDate}}">
+          <ion-icon class="iconText" name="information-circle-outline"></ion-icon>
+          <ion-textarea placeholder="{{app_label_58}}" (ionInput)="checkNote($event)" mode='ios' rows='4' [(ngModel)]="rateNote"></ion-textarea>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorRateNoteDate == 0">{{app_label_57}}</div>
+        </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer footerData" style=" justify-content: space-between;">
+      <ion-button (click)="addRateOrder(1)" shape="round" expand="block" class="submit-btn"><ion-icon name="happy" style="font-size: 30px;"></ion-icon></ion-button>
+      <ion-button (click)="addRateOrder(2)" shape="round" expand="block" class="submit-btn"><ion-icon name="sad" style="font-size: 30px;"></ion-icon></ion-button>
+  </div>
+</ion-footer>

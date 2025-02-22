@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "430197599346",
+    "project_id": "sama-6c81d",
+    "storage_bucket": "sama-6c81d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430197599346:android:6b760fdcc8e37778c726eb",
+        "android_client_info": {
+          "package_name": "com.samaabdountowers.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_xhG8zZzc94KVQOACwPyrhKIxFZHE9HY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

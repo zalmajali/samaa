@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_92}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+      <form style="display: contents;" (ngSubmit)="addUtility()">
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorUtilityName}}">
+             <ion-icon class="icon" name="settings-outline"></ion-icon>
+               <ion-select value="{{utility_id}}" toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"  (ionChange)="checkUtilityName($event)"  label="{{app_label_90}}" placeholder="{{app_label_90}}" mode="ios" interface="popover" class="my-custom-interface">
+                 <ion-select-option value="0">{{app_label_90}}</ion-select-option>
+                 <ion-select-option *ngFor="let items of returnUtilitiesArray;let i=index" value="{{items.utility_id}}-{{items.utility_type}}">{{items.utility_name}}</ion-select-option>
+               </ion-select>
+           </div>
+           <div class="errorMessage" *ngIf="isErrorUtilityName == 0">{{app_label_94}}</div>
+         </div>
+         <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorFromDate}}">
+            <ion-icon class="icon" name="time-outline"></ion-icon>
+            <ion-input type="text" [value]="fromDate" [(ngModel)]="fromDate" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_37}}" (ionInput)="checkUtilityFromDate($event)"></ion-input>
+            <ion-icon class="icon" name="calendar" (click)="openCalender()"></ion-icon>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorFromDate == 0">{{app_label_96}}</div>
+        </div>
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorToDate}}">
+            <ion-icon class="icon" name="time-outline"></ion-icon>
+            <ion-input type="text" [value]="toDate" [disabled]="showAnatherDate==0" [(ngModel)]="toDate" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_38}}" (ionInput)="checkUtilityToDate($event)"></ion-input>
+            <ion-icon class="icon" name="calendar" (click)="openCalender2()" *ngIf="showAnatherDate==1"></ion-icon>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorToDate == 0">{{app_label_97}}</div>
+        </div>
+         <div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="iconText" name="information-circle-outline"></ion-icon>
+            <ion-textarea placeholder="{{app_label_95}}" [ngModelOptions]="{standalone: true}" (ionInput)="checkNote($event)" mode='ios' rows='4' [(ngModel)]="utilityNote"></ion-textarea>
+           </div>
+         </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="showAnatherDate==0" class="disclaimer">
+    <div class="detail_div">
+      <ion-label><ion-checkbox [justify]="menuDirectionTow" [ngStyle]="{'direction': dirTow}"  mode="ios" (ionChange)="onCheckboxChange($event)">{{app_label_108}}</ion-checkbox></ion-label>
+      <ion-label class="show" (click)="showDisclaimer(utilityDisclaimer)">{{app_label_109}}</ion-label>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+      <ion-button (click)="addUtility()" shape="round" expand="block" class="submit-btn">{{app_label_93}}</ion-button>
+  </div>
+</ion-footer>

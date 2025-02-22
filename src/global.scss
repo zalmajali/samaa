@@ -1,0 +1,213 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+@font-face {
+    font-family: "regular";
+    src: url(assets/fonts/din-next-lt-w23-regular.ttf);
+  }
+  @font-face {
+    font-family: "medium";
+    src: url(assets/fonts/din-next-lt-w23-medium.ttf);
+  }
+  @font-face {
+    font-family: "bold";
+    src: url(assets/fonts/din-next-lt-w23-bold.ttf);
+  }
+  /* Arabic Font */
+@font-face {
+  font-family: 'Calibri';
+  src: url('assets/fonts/alfont.ttf') format('truetype');
+}
+/* Applying the Arabic font for Arabic text */
+// *:lang(ar) {
+//   font-family: 'Calibri', sans-serif;
+//   text-transform: none;
+// }
+
+/* Applying the English font for other languages */
+// *:lang(en) {
+//   font-family: 'regular';
+//   text-transform: none;
+// }
+* {
+    font-family: 'regular';
+    text-transform: none;
+  }
+  swiper-container{
+    --swiper-pagination-bottom:65px !important;
+    --swiper-pagination-color:#ffffff;
+  }
+  .utilitySlider{
+      --swiper-pagination-bottom:5px !important;
+      --swiper-pagination-color:#ffffff;
+  }
+  ion-content {
+    --background:#ffffff;
+  }
+  ion-input{
+    --border-width:0px !important;
+    --highlight-color:none !important;
+  }
+.errorStyleEmpty{
+    border: 1px solid red !important;
+}
+.successStyleFull{
+    border: 1px solid green !important;
+}
+.errorMessage{
+	text-align: start;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  padding-bottom: 5px;
+  color: red;
+}
+.toastStyle{
+	--background: #5c7784 !important;
+	--color: #ffffff;
+	--end:0px;
+	--start:0px;
+	--border-radius:0px;
+	--width:100%;
+	--max-width:100%;
+	--box-shadow:none;
+	font-size:11px;
+	text-align:start;
+	font-weight: bold;
+}
+.loading-wrapper{
+	border-radius:5px !important;
+	background:#5c7784 !important;
+	padding-inline-start:28px !important;
+	padding-inline-end:11px !important;
+	--spinner-color:#ffffff;
+}
+ion-avatar {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  --border-radius:0px !important;
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+ion-header{
+  box-shadow: none !important;
+}
+
+.alertBac{
+	--background:linear-gradient(90deg, #808080 0%, #5c7784 100%) !important;
+}
+.alert-message.sc-ion-alert-ios {
+  color: #ffffff;
+  font-size:15px;
+}
+.alert-button.sc-ion-alert-ios{
+	color: #ffffff;
+	font-weight:normal !important;
+	font-size: 15px;
+  padding-bottom: 10px;
+}
+ion-title{
+  font-size: 17px !important;
+}
+ion-footer {
+  padding: 8px 16px;
+  background-color: white;
+  .footer {
+    ion-button {
+      color: white;
+    }
+  }
+}
+.btn {
+  color: var(--ion-color-primary);
+  font-family: 'medium';
+  font-size: 14px;
+}
+.submit-btn {
+  color: var(--ion-color-primary);
+  font-family: 'medium';
+  font-size: 14px;
+}
+.submit-btn-push {
+  color: #ffffff;
+  font-family: 'medium';
+  font-size: 14px;
+  --border-radius:5px !important
+}
+ion-datetime{
+  --background: #ffffff !important  ;
+  --background-rgb: rgb(255, 255, 255);
+  --ion-color-base: #ffffff;
+  --ion-color-contrast: #ffffff;
+}
+.picker-before {
+  background-color: red;
+}
+ion-modal{
+  --backdrop-opacity:0 !important;
+  --background:transparent !important
+}
+ion-infinite-scroll-content{
+  min-height: 20px !important;
+}
+.notificationsMen{
+  --padding-start:0px !important;
+  --padding-end:0px  !important
+}
+.notificationsIcon{
+  color: var(--ion-color-primary);
+  padding: 0px 5px;
+  font-size: 23px;
+}
+ion-fab-button{
+  width: 50px !important;
+  height: 50px !important;
+}
+.list_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 14px;
+  position: relative;
+  margin: 16px 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

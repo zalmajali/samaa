@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_23}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="slide_div">
+    <div class="slide_img" [style.backgroundImage]="'url(assets/img/3.png)'"></div>
+  </div>
+  <div class="container">
+    <div class="name_div">
+      <div class="top_div">
+        <ion-label class="heading_title">{{serv_name}}</ion-label>
+      </div>
+      <!-- <div class="detail_div">
+        <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">10/10/2024</ion-label>
+        <ion-icon name="alarm" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text">10:00 am</ion-label>
+        <ion-icon name="alert-circle" color="primary" class="ionIconInformation"></ion-icon>
+        <ion-label class="text" style="color:#FDB501">In Progress</ion-label>
+      </div> -->
+      <div class="detail_div">
+        <ion-label class="price">{{serv_price}}JD</ion-label>
+        <ion-label class="text">&nbsp;</ion-label>
+      </div>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_22}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{serv_details}}</ion-label>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+    <ion-button class="btn" shape="round" expand="block" (click)="goToAddService(serv_id)">
+      {{app_label_24}}
+    </ion-button>
+  </div>
+</ion-footer>

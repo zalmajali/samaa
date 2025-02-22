@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToBack()">
+        <ion-icon slot="start" name="chevron-back" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+	<ion-title class="ion-title">{{app_label_112}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <div style="text-align: center;">
+      <img src="assets/img/warranty.png" style="width: 240px;">
+    </div>
+    <div class="list_card">
+      <div class="img" [style.backgroundImage]="'url(assets/img/warrantyicon6152105.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{app_label_113}}</ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text">{{warranty_start_date}}</ion-label>
+        </div>
+      </div>
+    </div>
+    <div class="list_card">
+      <div class="img" [style.backgroundImage]="'url(assets/img/calender8680937.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{app_label_114}}</ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text">{{warranty_end_date}}</ion-label>
+        </div>
+      </div>
+    </div>
+    <div class="list_card">
+      <div class="img" [style.backgroundImage]="'url(assets/img/5175186.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{app_label_115}}</ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text">{{warranty_details}}</ion-label>
+        </div>
+      </div>
+    </div>
+    <div class="list_card">
+      <div class="img" [style.backgroundImage]="'url(assets/img/calender8680937.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{app_label_118}}</ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text">{{warranty_ownership_date}}</ion-label>
+        </div>
+      </div>
+    </div>
+    <div class="list_card">
+      <div class="img" [style.backgroundImage]="'url(assets/img/file.png)'">
+      </div>
+      <div class="details">
+        <div class="flex_row">
+          <ion-label class="title">{{app_label_116}}</ion-label>
+        </div>
+        <div class="flex_row">
+          <ion-label class="text"></ion-label>
+          <ion-label class="text"><img src="assets/img/PDFFile.png" style="width: 40px;" (click)="openFileUser(warranty_file)"></ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

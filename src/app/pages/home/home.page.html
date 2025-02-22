@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToNotification()">
+        <ion-icon name="notifications-outline" class="notificationsIcon"></ion-icon>
+      </ion-button>
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{home_title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="userName">
+      {{app_label_21}}. {{name}}
+    </div>
+    <div class="banner_div">
+      <div class="content">
+        <ion-label class="discount">Residential Services</ion-label>
+        <ion-label class="title"></ion-label>
+        <ion-label class="text">Relish on flavorsome cuisines & delights from top eateries.</ion-label>
+      </div>
+      <div class="imgOffer">
+        <img src="../assets/img/h3.png">
+      </div>
+    </div>
+    <div class="title_div ion-padding">
+      <ion-label class="titleServe">{{app_label_17}}</ion-label>
+      <ion-label class="btn"></ion-label>
+    </div>
+    <div class="badge">
+      <div *ngIf="dataServices==1">
+        <ion-row>
+          <ion-col size="3" *ngFor="let item of returnServicesArray;let i=index">
+            <ion-img src="assets/img/mop.png" (click)="serviceDetails(item.service_id,item.service_name,item.service_price,item.service_details)"></ion-img>
+            <ion-label class="ionLabelserv">{{item.service_name}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="dataServices==0">
+        <div class="divIconNoOrders">
+          <img src="../../assets/img/logo.png" class="imageIcon">
+        </div>
+        <div class="errorNoDataSmall">{{app_label_20}}</div>
+      </div>
+    </div>
+    <div class="title_div ion-padding" style="padding-bottom:4px">
+      <ion-label class="titleServe">{{app_label_18}}</ion-label>
+    </div>
+    <div class="">
+      <div class="grid_card" *ngIf="dataUtilities==1">       
+          <div class="col_div" *ngFor="let item of returnUtilitiesArray;let i=index">
+            <div class="hotel_card">
+              <div class="imgFacility" [style.backgroundImage]="'url(' + item.utility_images + ')'">
+              </div>
+              <div class="detail">
+                <ion-label class="titleFacility">{{item.utility_name}}</ion-label>
+                <div class="item">
+                  <div class="price_div">
+                    <ion-label class="price">{{item.utility_price}}JD</ion-label>
+                  </div>
+                  <div class="price_div" (click)="utilitiesDatails(item.utility_id)">
+                    <ion-label class="price"><ion-icon name="reader" style="font-size: 20px;"></ion-icon></ion-label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="dataUtilities==0">
+        <div class="divIconNoOrders">
+          <img src="../../assets/img/logo.png" class="imageIcon">
+        </div>
+        <div class="errorNoDataSmall">{{app_label_19}}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

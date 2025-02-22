@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_30}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+      <form style="display: contents;" (ngSubmit)="addService()">
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorServiceName}}">
+             <ion-icon class="icon" name="settings-outline"></ion-icon>
+               <ion-select value="{{serviceName}}" toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"  (ionChange)="checkServiceName($event)"  label="{{app_label_25}}" placeholder="{{app_label_25}}" mode="ios" interface="popover" class="my-custom-interface">
+                 <ion-select-option value="0">{{app_label_25}}</ion-select-option>
+                 <ion-select-option *ngFor="let items of returnServicesArray;let i=index" value="{{items.service_id}}">{{items.service_name}}</ion-select-option>
+               </ion-select>
+           </div>
+           <div class="errorMessage" *ngIf="isErrorServiceName == 0">{{app_label_28}}</div>
+         </div>
+         <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorServiceDate}}">
+            <ion-icon class="icon" name="time-outline"></ion-icon>
+            <ion-input type="text" [(ngModel)]="serviceDate" [value]="serviceDate" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_26}}" (ionInput)="checkServiceDate($event)"></ion-input>
+            <ion-icon class="icon" name="calendar" (click)="openCalender()"></ion-icon>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorServiceDate == 0">{{app_label_29}}</div>
+        </div>
+         <div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="iconText" name="information-circle-outline"></ion-icon>
+            <ion-textarea placeholder="{{app_label_27}}" [ngModelOptions]="{standalone: true}" (ionInput)="checkNote($event)" mode='ios' rows='4' [(ngModel)]="serviceNote"></ion-textarea>
+           </div>
+         </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+      <ion-button (click)="addService()" shape="round" expand="block" class="submit-btn">{{app_label_31}}</ion-button>
+  </div>
+</ion-footer>

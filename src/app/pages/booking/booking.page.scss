@@ -1,0 +1,136 @@
+.order_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 9px 0px 9px;
+    position: relative;
+    margin: 16px 16px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.detail {
+    width: 100%;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+}
+.head {
+    font-size: 14px;
+    font-family: 'bold';
+}
+.title {
+    font-size: 12px;
+    color: #5c7784;;
+    font-weight: bold;
+    padding-top: 6px;
+    direction: ltr;
+}
+.text {
+    font-size: 13px;
+    font-family: 'medium';
+}
+.textData{
+    font-size: 11px;
+    font-family: 'medium';
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.103);
+    padding: 6px;
+    color: grey;
+    border-radius: 5px;
+}
+  .highlightEn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px; /* عرض الجزء الملون */
+    height: 100%;
+    background-color: #5c7784; /* اللون */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .highlightAr {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7px; /* عرض الجزء الملون */
+    height: 100%;
+    background-color: #5c7784; /* اللون */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .ion-col{
+    text-align: center;
+    padding: 0px;
+  }
+  .ion-col-data{
+    text-align: center;
+    padding: 0px;
+  }
+  .titleMen {
+    font-size: 13px;
+    color: #5c7784;
+    font-weight: bold;
+    padding-top: 6px;
+    text-align: start;
+}
+.subtitleMen {
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+    text-align: start;
+    padding: 5px 15px;
+}
+.errorNoDataLarge{
+	text-align: center;
+    color: #5c7784;
+    font-size: 15px;
+    font-weight: bold;
+	margin-top: 1vh;
+}
+.errorNoDataSmall{
+	text-align: center;
+    color: grey;
+    font-size: 13px;
+	margin-top: 1vh;
+}
+.divIconNoOrders{
+	text-align: center;
+    margin-top: 25vh;
+}
+.imageIcon{
+	width:25%
+}
+.icon {
+    color: var(--ion-color-primary);
+    padding: 0px 5px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.iconCallEmail {
+    color: var(--ion-color-primary);
+    padding: 0px 5px;
+    font-size: 23px;
+    vertical-align: middle;
+}
+.searchIcon{
+    color: var(--ion-color-primary);
+    padding: 0px 5px;
+    font-size: 23px;
+}
+.iconLabel {
+    padding: 0px 3px;
+    font-size: 16px;
+    vertical-align: bottom;
+}
+.iconTime{
+    padding: 0px 3px;
+    font-size: 18px;
+    vertical-align: bottom;
+}

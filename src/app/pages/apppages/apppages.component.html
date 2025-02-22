@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{pageName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <div class="items">
+      <img src="{{page_images_one}}" width="120px" class="img" *ngIf="page_images_one">
+      <ion-label class="text">{{content}}</ion-label>
+    </div>
+    <div style="text-align: center;" *ngIf="page_images_tow">
+      <img src="{{page_images_tow}}" class="largimg">
+    </div>
+  </div>
+</ion-content>
+

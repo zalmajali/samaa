@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_23}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="slide_div">
+    <div class="slide_img" [style.backgroundImage]="'url(assets/img/3.png)'"></div>
+  </div>
+  <div class="container">
+    <div class="name_div">
+      <div class="top_div">
+        <ion-label class="heading_title">{{service_name}}</ion-label>
+        <ion-label class="textData">{{service_type}}</ion-label>
+      </div>
+      <div class="detail_div">
+        <div class="divPrice">
+          <ion-label class="price">{{service_price}} JD</ion-label>
+          <ion-label class="text">&nbsp;</ion-label>
+        </div>
+        <div class="divTime">
+          <ion-icon name="calendar" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text">{{service_schedule_time}}</ion-label>
+          <ion-icon name="alarm" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text">{{service_schedule_date}}</ion-label>
+        </div>
+      </div>
+      <div class="detail_div">
+        <div class="divInfo">
+          <ion-icon name="person" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text" style="font-weight: bold;">{{owner_name}}</ion-label>
+        </div>
+        <div class="divInfo" (click)="callNumberUser(mobile_user)">
+          <ion-icon name="call" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text" style="color: rgb(88, 88, 255);text-decoration: underline;">{{mobile_user}}</ion-label>
+        </div>
+      </div>
+      <div class="detail_div">
+        <div class="divInfo">
+          <ion-icon name="business" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text">{{building_name}}</ion-label>
+        </div>
+        <div class="divInfo">
+          <ion-icon name="storefront" color="primary" class="ionIconInformation"></ion-icon>
+          <ion-label class="text">{{apartment_number}}</ion-label>
+        </div>
+      </div>
+    </div>
+    <div class="title_div">
+      <ion-label class="title">{{app_label_22}}</ion-label>
+    </div>
+    <div class="description">
+      <ion-label class="text">{{service_description}}</ion-label>
+    </div>
+  </div>
+</ion-content>

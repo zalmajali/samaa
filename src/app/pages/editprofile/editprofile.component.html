@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{account_information}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+      <form style="display: contents;" (ngSubmit)="editProfile()">
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorFullName}}">
+            <ion-icon class="icon" name="person-circle-outline"></ion-icon>
+            <ion-input type="text" [value]="fullName" [(ngModel)]="fullName" [ngModelOptions]="{standalone: true}" placeholder="{{register_full_name}}" (ionInput)="checkFullName($event)"></ion-input>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorFullName == 0">{{register_full_name_field}}</div>
+        </div>
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input {{errorMobile}}">
+            <ion-icon class="icon" name="call-outline"></ion-icon>
+            <ion-input type="text" [value]="mobileUser" [(ngModel)]="mobileUser" [ngModelOptions]="{standalone: true}" placeholder="{{register_full_mobile}}" (ionInput)="checkMobile($event)"></ion-input>
+          </div>
+          <div class="errorMessage" *ngIf="isErrorMobile == 0">{{register_full_mobile_field}}</div>
+        </div> 
+        <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+      </form>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer">
+      <ion-button (click)="editProfile()" shape="round" expand="block" class="submit-btn">{{account_edit_button}}</ion-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_158}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main-content">
+    <div class="center_div">
+      <form style="display: contents;" (ngSubmit)="filterData()">
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="icon" name="business-outline"></ion-icon>
+              <ion-select value="{{building_data_index}}"  toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"  (ionChange)="checkBuilding($event)"  label="{{app_label_79}}" placeholder="{{app_label_78}}" mode="ios" interface="popover" class="my-custom-interface">
+                <ion-select-option value="-1">{{app_label_78}}</ion-select-option>
+                <ion-select-option *ngFor="let items of returnApartmentArray;let i=index" value="{{i}}">{{items.building_name}}</ion-select-option>
+              </ion-select>
+          </div>
+      </div>
+      <div>
+       <div [ngStyle]="{'direction': dir}" class="input">
+          <ion-icon class="icon" name="storefront-outline"></ion-icon>
+            <ion-select value="{{apartment_data}}" toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline" (ionChange)="checkApartment($event)"  label="{{app_label_80}}" placeholder="{{app_label_78}}" mode="ios" interface="popover" class="my-custom-interface">
+              <ion-select-option value="0">{{app_label_78}}</ion-select-option>
+              <ion-select-option *ngFor="let items of selectedApartmentArray;let i=index" value="{{items.apartment_id}}">{{items.apartment_number}}</ion-select-option>
+            </ion-select>
+        </div>
+      </div>
+      <div class="item">
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="iconTime" name="time-outline"></ion-icon>
+            <ion-input (ionChange)="checkFromDat($event)" type="text" [value]="from_date_data" [(ngModel)]="from_date_data" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_37}}"></ion-input>
+            <ion-icon class="iconTime" name="calendar" (click)="openCalender()"></ion-icon>
+          </div>
+          <div class="spaceBet"></div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="iconTime" name="time-outline"></ion-icon>
+            <ion-input (ionChange)="checkToDat($event)" type="text" [value]="to_date_data" [(ngModel)]="to_date_data" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_38}}"></ion-input>
+            <ion-icon class="iconTime" name="calendar" (click)="openCalender2()"></ion-icon>
+          </div>
+        </div>
+        <div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="icon" name="information-circle-outline"></ion-icon>
+            <ion-input  (ionChange)="checkNot($event)" type="text" [(ngModel)]="note_data" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_39}}"></ion-input>
+          </div>
+        </div>
+        <div class="item">
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="icon" name="cash-outline"></ion-icon>
+            <ion-input  (ionChange)="checkFromPrice($event)" type="text" [(ngModel)]="from_price_data" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_40}}"></ion-input>
+          </div>
+          <div class="spaceBet"></div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="icon" name="cash-outline"></ion-icon>
+            <ion-input type="text" (ionChange)="checkToPrice($event)"  [(ngModel)]="to_price_data" [ngModelOptions]="{standalone: true}" placeholder="{{app_label_41}}"></ion-input>
+          </div>
+        </div>
+         <div>
+          <div [ngStyle]="{'direction': dir}" class="input">
+            <ion-icon class="icon" name="layers-outline"></ion-icon>
+               <ion-select value="{{status_data}}" toggle-icon="chevron-down-outline" expanded-icon="chevron-up-outline"  label="{{app_label_152}}" (ionChange)="checkStatusDataType($event)" placeholder="{{app_label_152}}" mode="ios" interface="popover" class="my-custom-interface">
+                <ion-select-option value=" ">{{app_label_152}}</ion-select-option> 
+                <ion-select-option value="0">{{app_label_146}}</ion-select-option>
+                 <ion-select-option value="1">{{app_label_145}}</ion-select-option>
+               </ion-select>
+           </div>
+         </div>
+        <button style="visibility:hidden" id="submit" ion-button type="submit"></button>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer">
+      <ion-button shape="round" expand="block" class="submit-btn" (click)="filterData()">{{app_label_44}}</ion-button>
+  </div>
+</ion-footer>

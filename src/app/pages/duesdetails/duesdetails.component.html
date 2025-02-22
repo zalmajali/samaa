@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closePage()">
+        <ion-icon slot="start" name="close" color="dark" class="closeIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-title">{{app_label_147}} #{{due_id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="main-content">
+    <div class="name_div">
+      <div class="detail" *ngIf="type_name">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="receipt-outline" class="iconLabel"></ion-icon>{{app_label_149}}</ion-label>
+          <ion-label class="head">{{type_name}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="name_due">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="clipboard-outline" class="iconLabel"></ion-icon>{{app_label_148}}</ion-label>
+          <ion-label class="head">{{name_due}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="price">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="cash-outline" class="iconLabel"></ion-icon>{{app_label_150}}</ion-label>
+          <ion-label class="head">{{price}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="date">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_151}}</ion-label>
+          <ion-label class="head">{{date}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="dues_status">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="information-circle-outline" class="iconLabel"></ion-icon>{{app_label_152}}</ion-label>
+          <ion-label class="head">{{dues_status}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="payment_at">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_153}}</ion-label>
+          <ion-label class="head">{{payment_at}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="review_by">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="person-circle-outline" class="iconLabel"></ion-icon>{{app_label_157}}</ion-label>
+          <ion-label class="head">{{review_by}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="review_at">
+        <div class="item">
+          <ion-label class="head"><ion-icon name="calendar-outline" class="iconLabel"></ion-icon>{{app_label_156}}</ion-label>
+          <ion-label class="head">{{review_at}}</ion-label>
+        </div>
+      </div>
+      <div class="detail" *ngIf="payment_note">
+        <div>
+          <ion-label class="head"><ion-icon name="reader-outline" class="iconLabel"></ion-icon>{{app_label_155}}</ion-label>
+          <div class="headDeta">{{payment_note}}</div>
+        </div>
+      </div>
+      <div class="detail" *ngIf="description">
+        <div>
+          <ion-label class="head"><ion-icon name="reader-outline" class="iconLabel"></ion-icon>{{app_label_154}}</ion-label>
+          <div class="headDeta">{{description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

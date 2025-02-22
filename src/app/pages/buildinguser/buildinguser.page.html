@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-padding-start">
+      <ion-avatar>
+        <img src="assets/img/logo.png" />
+      </ion-avatar>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="notificationsMen" (click)="goToSearch()">
+        <ion-icon name="search-outline" class="searchIcon"></ion-icon>
+      </ion-button>
+      <ion-button class="notificationsMen" (click)="goToProfile()">
+        <ion-icon name="menu-outline" class="notificationsIcon" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{app_label_119}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (ionScroll)="onScroll($event)" scrollEvents="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refrechPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-content">
+    <div *ngIf="allUser==1">
+      <div class="order_card" *ngFor="let item of returnAllUserArray;let i=index">
+        <div></div>
+        <div class="detail">
+          <div class="item">
+            <ion-label class="head pb-1">{{app_label_3}} #{{item.apartment_number}} </ion-label>
+            <ion-label class="head pb-1" (click)="goTodetails(item.apartment_id,item.apartment_number)">
+              <ion-icon name="reader" class="iconCallEmail"></ion-icon>
+            </ion-label>
+          </div>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-col">
+                  <div class="titleMen"> <ion-icon name="business-outline" class="iconLabel"></ion-icon>{{app_label_61}}</div>
+                  <div class="subtitleMen">{{item.building_name}}</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="allUser==0">
+      <div class="divIconNoOrders">
+         <img src="../../assets/img/logo.png" class="imageIcon">
+     </div>
+     <div class="errorNoDataLarge">{{app_label_9}}</div>
+     <div class="errorNoDataSmall">{{app_label_10}}</div>
+  </div>
+  </div>
+  <ion-infinite-scroll slot="fixed" position="bottom" threshold="10px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content loadingSpinner="none">
+    </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
